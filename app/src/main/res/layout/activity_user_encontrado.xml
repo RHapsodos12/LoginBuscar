@@ -112,5 +112,4 @@
         android:textColor="@color/white"
         android:drawableLeft="@drawable/ic_border" />
 
-
 </LinearLayout>

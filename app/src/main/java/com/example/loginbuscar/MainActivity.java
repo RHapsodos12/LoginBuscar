@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
     void buscar() {
 
-        String url="http://172.20.98.240/htdocs/login/buscar.php?user="+mTxtNames.getText().toString();
+        String url="http://192.168.1.106/htdocs/login/buscar.php?user="+mTxtNames.getText().toString();
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
