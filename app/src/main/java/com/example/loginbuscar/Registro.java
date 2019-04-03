@@ -75,6 +75,7 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
     }
 
     void limpiar_cajas() {
+
         mTxtNames.setText("");
         mTxtPwd.setText("");
         mTxtUser.setText("");
