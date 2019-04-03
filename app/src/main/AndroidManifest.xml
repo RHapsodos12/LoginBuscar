@@ -14,16 +14,16 @@
         <activity android:name=".user_registrado"></activity>
         <activity android:name=".Registro" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".Login" />
-        <activity android:name=".Modificar" />
-        <activity android:name=".user_encontrado" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Modificar" />
+        <activity android:name=".user_encontrado" />
+        <activity android:name=".MainActivity">
+        </activity>
     </application>
-
 </manifest>

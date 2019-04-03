@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity implements Response.Listener<JSONOb
         //URL donde se encuentra el archivo web service envio de parametros con el metodo GET
         //String url="http://172.20.98.193/htdocs/login/web_service.php?user="+txtUser.getText().toString()+"&pwd="+txtPwd.getText().toString();
 
-        String url="https://distic.com.mx/sesion.php?user="+txtUser.getText().toString()+"&pwd="+txtPwd.getText().toString();
+        String url="https://distic.com.mx/login/sesion.php?user="+txtUser.getText().toString()+"&pwd="+txtPwd.getText().toString();
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
