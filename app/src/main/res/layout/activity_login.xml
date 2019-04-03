@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inicio de Sesión"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="25dp"
+        android:textSize="26sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:textSize="24sp"
+        android:textAlignment="textEnd"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/txtuserLogin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="-35dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/txtpwdLogin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="-35dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btnregistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text="Inicio de Sesión"/>
+
+</LinearLayout>
