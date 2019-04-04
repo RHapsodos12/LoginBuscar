@@ -46,9 +46,9 @@ public class Main2Activity extends AppCompatActivity {
 
                 try {
                     Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
-                    instancia.putExtra(Registro.username, nombreusuario);
-                    instancia.putExtra(Registro.password, contra);
-                    instancia.putExtra(Registro.nombres, usuario);
+                    instancia.putExtra(MainActivity.username, nombreusuario);
+                    instancia.putExtra(MainActivity.password, contra);
+                    instancia.putExtra(MainActivity.nombres, usuario);
                     startActivity(instancia);
                 } catch (Exception e) {
                     e.printStackTrace();

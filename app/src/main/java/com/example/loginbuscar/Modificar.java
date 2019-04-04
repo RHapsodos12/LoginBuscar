@@ -24,6 +24,7 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
     JsonRequest jrq;
 
     public static String nombres= "names", username="user", password="pwd";
+    public static String nombres0= "names0", username0="user0", password0="pwd0";
     String usuario, nombreusuario, contra;
 
     EditText User, Name, Pwd;
@@ -56,7 +57,15 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
         mBtnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                usuario = getIntent().getStringExtra("names0");
+                nombreusuario = getIntent().getStringExtra("user0");
+                contra = getIntent().getStringExtra("pwd0");
+
                 Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
+                instancia.putExtra(MainActivity.nombres, usuario);
+                instancia.putExtra(MainActivity.username, nombreusuario);
+                instancia.putExtra(MainActivity.password, contra);
                 startActivity(instancia);
             }
         });
@@ -70,6 +79,19 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
     }
 
     @Override
+    public void onBackPressed() {
+        usuario = getIntent().getStringExtra("names0");
+        nombreusuario = getIntent().getStringExtra("user0");
+        contra = getIntent().getStringExtra("pwd0");
+
+        Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
+        instancia.putExtra(MainActivity.nombres, usuario);
+        instancia.putExtra(MainActivity.username, nombreusuario);
+        instancia.putExtra(MainActivity.password, contra);
+        startActivity(instancia);
+    }
+
+    @Override
     public void onErrorResponse(VolleyError error) {
 
         Toast.makeText(getApplicationContext(), "Hubo un error al modificar", Toast.LENGTH_SHORT).show();
@@ -80,6 +102,12 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
 
         Toast.makeText(getApplicationContext(), "Usuario Modificado Correctamente", Toast.LENGTH_SHORT).show();
         Intent instancia = new Intent(Modificar.this, MainActivity.class);
+        usuario = getIntent().getStringExtra("names0");
+        nombreusuario = getIntent().getStringExtra("user0");
+        contra = getIntent().getStringExtra("pwd0");
+        instancia.putExtra(MainActivity.nombres, usuario);
+        instancia.putExtra(MainActivity.username, nombreusuario);
+        instancia.putExtra(MainActivity.password, contra);
         startActivity(instancia);
     }
 

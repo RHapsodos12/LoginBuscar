@@ -24,12 +24,13 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
     JsonRequest jrq;
 
     public static String nombres= "names", username="user", password="pwd";
-
+    public static String nombres0= "names0", username0="user0", password0="pwd0";
     TextView txtNombre, txtUser, txtPwd;
 
     Button  mBtnModificar, mBtnEliminar;
 
     String usuario, nombreusuario, contra;
+    String usuario0, nombreusuario0, contra0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,11 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
         nombreusuario = getIntent().getStringExtra("user");
         contra = getIntent().getStringExtra("pwd");
 
+        usuario0 = getIntent().getStringExtra("names0");
+        nombreusuario0 = getIntent().getStringExtra("user0");
+        contra0 = getIntent().getStringExtra("pwd0");
+
+
         txtNombre.setText(" "+usuario);
         txtUser.setText(" "+ nombreusuario);
         txtPwd.setText(" "+ contra);
@@ -61,6 +67,10 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
                 instancia.putExtra(Modificar.nombres, usuario);
                 instancia.putExtra(Modificar.username, nombreusuario);
                 instancia.putExtra(Modificar.password, contra);
+
+                instancia.putExtra(Modificar.nombres0, usuario0);
+                instancia.putExtra(Modificar.username0, nombreusuario0);
+                instancia.putExtra(Modificar.password0, contra0);
                 startActivity(instancia);
             }
         });
@@ -73,9 +83,18 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
         });
     }
 
+
     @Override
     public void onBackPressed() {
+
+        usuario = getIntent().getStringExtra("names0");
+        nombreusuario = getIntent().getStringExtra("user0");
+        contra = getIntent().getStringExtra("pwd0");
+
         Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
+        instancia.putExtra(MainActivity.nombres, usuario);
+        instancia.putExtra(MainActivity.username, nombreusuario);
+        instancia.putExtra(MainActivity.password, contra);
         startActivity(instancia);
     }
 
@@ -87,8 +106,13 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
     @Override
     public void onResponse(JSONObject response) {
         Toast.makeText(getApplicationContext(), "Usuario Eliminado", Toast.LENGTH_SHORT).show();
-
+        usuario = getIntent().getStringExtra("names0");
+        nombreusuario = getIntent().getStringExtra("user0");
+        contra = getIntent().getStringExtra("pwd0");
         Intent instancia = new Intent(user_encontrado.this, MainActivity.class);
+        instancia.putExtra(MainActivity.nombres, usuario);
+        instancia.putExtra(MainActivity.username, nombreusuario);
+        instancia.putExtra(MainActivity.password, contra);
         startActivity(instancia);
     }
 

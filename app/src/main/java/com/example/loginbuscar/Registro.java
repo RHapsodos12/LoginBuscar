@@ -75,7 +75,7 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
     @Override
     public void onResponse(JSONObject response) {
 
-        Toast.makeText(getApplicationContext(), "Registrado Correctamente"+usuario+nombreusuario+password, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
         limpiar_cajas();
 
         Intent instancia = new Intent(getApplicationContext(), Main2Activity.class);

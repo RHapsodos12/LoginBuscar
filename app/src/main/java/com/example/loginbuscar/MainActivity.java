@@ -63,16 +63,16 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
     @Override
     public void onResponse(JSONObject response) {
 
-        User usuario = new User();
+        User user = new User();
 
         JSONArray jsonArray=response.optJSONArray("datos");
         JSONObject jsonObject=null;
 
         try {
             jsonObject = jsonArray.getJSONObject(0);
-            usuario.setUser(jsonObject.optString("user"));
-            usuario.setPwd(jsonObject.optString("pwd"));
-            usuario.setNames(jsonObject.optString("names"));
+            user.setUser(jsonObject.optString("user"));
+            user.setPwd(jsonObject.optString("pwd"));
+            user.setNames(jsonObject.optString("names"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -81,18 +81,22 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         Toast.makeText(getApplicationContext(), "Se encontró el usuario", Toast.LENGTH_SHORT).show();
 
         Intent instancia = new Intent(MainActivity.this, user_encontrado.class);
-        instancia.putExtra(user_encontrado.nombres, usuario.getNames());
-        instancia.putExtra(user_encontrado.username, usuario.getUser());
-        instancia.putExtra(user_encontrado.password, usuario.getPwd());
+        instancia.putExtra(user_encontrado.nombres, user.getNames());
+        instancia.putExtra(user_encontrado.username, user.getUser());
+        instancia.putExtra(user_encontrado.password, user.getPwd());
+
+        instancia.putExtra(user_encontrado.nombres0, usuario);
+        instancia.putExtra(user_encontrado.username0, nombreusuario);
+        instancia.putExtra(user_encontrado.password0, contra);
         startActivity(instancia);
     }
 
-    @Override
+   @Override
     public void onBackPressed() {
         Intent instancia = new Intent(MainActivity.this, Main2Activity.class);
-        instancia.putExtra(Modificar.nombres, usuario);
-        instancia.putExtra(Modificar.username, nombreusuario);
-        instancia.putExtra(Modificar.password, contra);
+        instancia.putExtra(Main2Activity.nombres, usuario);
+        instancia.putExtra(Main2Activity.username, nombreusuario);
+        instancia.putExtra(Main2Activity.password, contra);
         startActivity(instancia);
     }
 
