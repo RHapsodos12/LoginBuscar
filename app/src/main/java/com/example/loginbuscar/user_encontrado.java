@@ -88,7 +88,7 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
 
     void eliminar() {
 
-        String url="http://192.168.1.106/htdocs/login/buscar.php?accion=e&user="+nombreusuario;
+        String url="http://santacruza.proyectosutd.com/login/login/buscar.php?accion=e&user="+nombreusuario;
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
