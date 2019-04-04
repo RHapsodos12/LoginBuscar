@@ -39,4 +39,47 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
+    <FrameLayout
+        android:id="@+id/registrarUser"
+        android:layout_width="120dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_person_add" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Usuario"
+            android:textAlignment="center" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/BuscarUser"
+        android:layout_width="120dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="-130dp"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_search_black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar Usuario"
+            android:textAlignment="center" />
+    </FrameLayout>
+
 </LinearLayout>
