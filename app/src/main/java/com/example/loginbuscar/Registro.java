@@ -62,7 +62,7 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
         Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
         limpiar_cajas();
 
-        Intent instancia = new Intent(getApplicationContext(), user_registrado.class);
+        Intent instancia = new Intent(getApplicationContext(), Main2Activity.class);
         startActivity(instancia);
     }
 
