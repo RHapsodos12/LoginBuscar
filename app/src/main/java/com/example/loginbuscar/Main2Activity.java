@@ -10,8 +10,9 @@ import android.widget.TextView;
 public class Main2Activity extends AppCompatActivity {
 
     public static String nombres= "names", username="user", password="pwd";
+    String usuario, nombreusuario, contra;
     TextView tvBienvenido, tvUser, tvPass;
-
+    int i = 0;
     FrameLayout buscar, registrar;
 
     @Override
@@ -23,10 +24,12 @@ public class Main2Activity extends AppCompatActivity {
         tvUser = findViewById(R.id.tvuser);
         tvPass = findViewById(R.id.tvpass);
 
+        final User user = new User();
+
         //Asignar a un objeto String el valor enviado por el intent con el método putExtra
-        String usuario = getIntent().getStringExtra("names");
-        String nombreusuario = getIntent().getStringExtra("user");
-        String contra = getIntent().getStringExtra("pwd");
+            usuario = getIntent().getStringExtra("names");
+            nombreusuario = getIntent().getStringExtra("user");
+            contra = getIntent().getStringExtra("pwd");
 
         tvBienvenido.setText("¡Bienvenido "+usuario+"!");
         tvUser.setText("Usuario: "+ nombreusuario);
@@ -54,6 +57,9 @@ public class Main2Activity extends AppCompatActivity {
 
                 try {
                     Intent instancia = new Intent(getApplicationContext(), Registro.class);
+                    instancia.putExtra(Registro.username, nombreusuario);
+                    instancia.putExtra(Registro.password, contra);
+                    instancia.putExtra(Registro.nombres, usuario);
                     startActivity(instancia);
                 } catch (Exception e) {
                     e.printStackTrace();

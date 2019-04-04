@@ -20,6 +20,8 @@ import org.json.JSONObject;
 
 public class Registro extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
+    public static String nombres= "names", username="user", password="pwd";
+    String usuario, nombreusuario, contra;
     RequestQueue rq;
     JsonRequest jrq;
 
@@ -37,6 +39,10 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
         mTxtNames = findViewById(R.id.txtNamesReg);
 
         rq = Volley.newRequestQueue(getApplicationContext());
+
+        usuario = getIntent().getStringExtra("names");
+        nombreusuario = getIntent().getStringExtra("user");
+        contra = getIntent().getStringExtra("pwd");
 
         mBtnRegistrar.setOnClickListener(new View.OnClickListener() {
 
@@ -59,10 +65,13 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
     @Override
     public void onResponse(JSONObject response) {
 
-        Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Registrado Correctamente"+usuario+nombreusuario+password, Toast.LENGTH_SHORT).show();
         limpiar_cajas();
 
         Intent instancia = new Intent(getApplicationContext(), Main2Activity.class);
+        instancia.putExtra(Main2Activity.username, nombreusuario);
+        instancia.putExtra(Main2Activity.password, contra);
+        instancia.putExtra(Main2Activity.nombres, usuario);
         startActivity(instancia);
     }
 
