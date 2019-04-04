@@ -57,6 +57,16 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
     }
 
     @Override
+    public void onBackPressed() {
+
+        Intent instancia = new Intent(getApplicationContext(), Main2Activity.class);
+        instancia.putExtra(Main2Activity.username, nombreusuario);
+        instancia.putExtra(Main2Activity.password, contra);
+        instancia.putExtra(Main2Activity.nombres, usuario);
+        startActivity(instancia);
+    }
+
+    @Override
     public void onErrorResponse(VolleyError error) {
 
         Toast.makeText(getApplicationContext(), "Error al registrar"+error.toString(), Toast.LENGTH_SHORT).show();

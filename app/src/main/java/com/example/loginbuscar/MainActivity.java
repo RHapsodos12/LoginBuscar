@@ -22,8 +22,12 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
+    public static String nombres= "names", username="user", password="pwd";
+
     RequestQueue rq;
     JsonRequest jrq;
+
+    String usuario, nombreusuario, contra;
 
     EditText mTxtNames;
     AppCompatButton mBtnBuscar;
@@ -35,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
 
         mTxtNames = findViewById(R.id.txtNames1);
         mBtnBuscar = findViewById(R.id.btnBuscar);
+
+        usuario = getIntent().getStringExtra("names");
+        nombreusuario = getIntent().getStringExtra("user");
+        contra = getIntent().getStringExtra("pwd");
 
         rq = Volley.newRequestQueue(getApplicationContext());
 
@@ -79,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         startActivity(instancia);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent instancia = new Intent(MainActivity.this, Main2Activity.class);
+        instancia.putExtra(Modificar.nombres, usuario);
+        instancia.putExtra(Modificar.username, nombreusuario);
+        instancia.putExtra(Modificar.password, contra);
+        startActivity(instancia);
+    }
+
     void buscar() {
 
         String url="http://santacruza.proyectosutd.com/login/buscar.php?user="+mTxtNames.getText().toString();
@@ -86,4 +103,5 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
     }
+
 }

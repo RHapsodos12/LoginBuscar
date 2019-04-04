@@ -74,6 +74,12 @@ public class user_encontrado extends AppCompatActivity implements Response.Liste
     }
 
     @Override
+    public void onBackPressed() {
+        Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(instancia);
+    }
+
+    @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(getApplicationContext(), "Usuario no Eliminado", Toast.LENGTH_SHORT).show();
     }

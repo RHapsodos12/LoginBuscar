@@ -1,5 +1,7 @@
 package com.example.loginbuscar;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +46,9 @@ public class Main2Activity extends AppCompatActivity {
 
                 try {
                     Intent instancia = new Intent(getApplicationContext(), MainActivity.class);
+                    instancia.putExtra(Registro.username, nombreusuario);
+                    instancia.putExtra(Registro.password, contra);
+                    instancia.putExtra(Registro.nombres, usuario);
                     startActivity(instancia);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -66,5 +71,37 @@ public class Main2Activity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        try {
+            confirmDialog();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void confirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder
+                .setMessage("¿Está seguro que desea salir?")
+                .setPositiveButton("Sí",  new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Toast.makeText(getApplicationContext(),"Gucci",Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
     }
 }
