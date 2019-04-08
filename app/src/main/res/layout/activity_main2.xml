@@ -8,20 +8,20 @@
     tools:context=".Main2Activity"
     android:orientation="vertical">
 
-   <!--<android.support.v7.widget.Toolbar
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-       style="@style/Theme.AppCompat.Light.NoActionBar"
-       android:background="@color/colorPrimary"
-       >
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Proyecto BD Santacruz"
-           android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-           android:textColor="@color/white"/>
-   </android.support.v7.widget.Toolbar>-->
+    <!-- <android.support.v7.widget.Toolbar
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+         style="@style/Theme.AppCompat.Light.NoActionBar"
+         android:background="@color/colorPrimary"
+         >
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Proyecto BD Santacruz"
+             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+             android:textColor="@color/white"/>
+     </android.support.v7.widget.Toolbar>-->
 
     <TextView
         android:id="@+id/tvbienvenido"
