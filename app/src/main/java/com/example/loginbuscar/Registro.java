@@ -87,7 +87,10 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
 
     void nuevo_registro () {
 
-        String url="http://santacruza.proyectosutd.com/login/registrar.php?names="+mTxtNames.getText().toString()+"&user="+mTxtUser.getText().toString()+"&pwd="+mTxtPwd.getText().toString();
+        String names = mTxtNames.getText().toString();
+        names.replaceAll(" ", "-");
+
+        String url="http://santacruza.proyectosutd.com/login/registrar.php?names="+names+"&user="+mTxtUser.getText().toString()+"&pwd="+mTxtPwd.getText().toString();
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);

@@ -113,7 +113,10 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
 
     void modificar(){
 
-        String url="http://santacruza.proyectosutd.com/login/buscar.php?accion=m&user="+nombreusuario+"&names="+Name.getText().toString()+"&pwd="+Pwd.getText().toString();
+        String name  = Name.getText().toString();
+        name.replaceAll(" ", "-");
+
+        String url="http://santacruza.proyectosutd.com/login/buscar.php?accion=m&user="+nombreusuario+"&names="+name+"&pwd="+Pwd.getText().toString();
 
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         rq.add(jrq);
