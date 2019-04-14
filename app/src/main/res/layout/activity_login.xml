@@ -11,13 +11,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inicio de Sesión"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="25dp"
-        android:textSize="26sp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Inicio de Sesión"
         android:textAlignment="center"
-        />
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon"/>
 
     <TextView
         android:id="@+id/textView"
@@ -27,17 +35,19 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="10dp"
         android:textSize="24sp"
-        android:textAlignment="textEnd"/>
+        android:textAlignment="textEnd"
+        android:fontFamily="sans-serif-condensed"/>
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/txtuserLogin"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="-35dp"
+        android:layout_marginTop="-40dp"
         android:ems="10"
         android:hint="Usuario"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -47,17 +57,19 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="10dp"
         android:textAlignment="textEnd"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed"/>
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/txtpwdLogin"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="-35dp"
+        android:layout_marginTop="-40dp"
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:fontFamily="sans-serif-condensed"/>
 
     <Button
         android:id="@+id/btnregistrar"

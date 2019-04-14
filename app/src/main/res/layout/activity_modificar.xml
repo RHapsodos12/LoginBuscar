@@ -7,6 +7,9 @@
     tools:context=".Modificar"
     android:orientation="vertical">
 
+    <include
+        layout="@layout/barra"/>
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
@@ -16,7 +19,8 @@
         android:layout_marginEnd="25dp"
         android:textAlignment="center"
         android:text="Modificar Usuario"
-        android:textSize="26sp"/>
+        android:textSize="26sp"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -25,7 +29,9 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
-        android:text="Nombre de Usuario"/>
+        android:text="Nombre de Usuario"
+        android:fontFamily="sans-serif-condensed"
+        />
 
     <EditText
         android:id="@+id/etUser"
@@ -47,7 +53,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Nombre Completo"/>
+        android:text="Nombre Completo"
+        android:fontFamily="sans-serif-condensed"/>
 
     <EditText
         android:id="@+id/etName"
@@ -67,7 +74,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Contraseña"/>
+        android:text="Contraseña"
+        android:fontFamily="sans-serif-condensed"/>
 
     <EditText
         android:id="@+id/etPwd"
@@ -90,7 +98,8 @@
         android:background="@color/modificarc"
         android:drawableLeft="@drawable/ic_ok"
         android:text="Modificar"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-condensed"/>
 
     <Button
         android:id="@+id/btnCancel"
@@ -102,7 +111,8 @@
         android:background="@color/cancel"
         android:drawableLeft="@drawable/ic_cancel"
         android:text="Cancelar"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-condensed"/>
 
 
 

@@ -7,6 +7,9 @@
     tools:context=".user_encontrado"
     android:orientation="vertical">
 
+    <include
+        layout="@layout/barra" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"

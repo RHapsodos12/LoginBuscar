@@ -8,6 +8,9 @@
     tools:context=".Main2Activity"
     android:orientation="vertical">
 
+    <include
+        layout="@layout/barra"/>
+
     <!-- <android.support.v7.widget.Toolbar
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -32,7 +35,8 @@
         android:layout_marginEnd="10dp"
         android:text="¡Bienvenido!"
         android:textAlignment="center"
-        android:textSize="26sp"/>
+        android:textSize="26sp"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/tvuser"
@@ -42,7 +46,8 @@
         android:layout_marginStart="25dp"
         android:text="Usuario"
         android:textAlignment="center"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/tvpass"
@@ -52,7 +57,8 @@
         android:layout_marginStart="25dp"
         android:text="Contraseña"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed"/>
 
     <FrameLayout
         android:id="@+id/registrarUser"
@@ -72,7 +78,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrar Usuario"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"/>
     </FrameLayout>
 
 
@@ -94,7 +101,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Buscar Usuario"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"/>
     </FrameLayout>
 
 </LinearLayout>
