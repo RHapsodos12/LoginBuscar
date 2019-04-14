@@ -40,12 +40,10 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
         try {
             Toolbar barra= findViewById(R.id.barrita);
             setSupportActionBar(barra);
-            barra.setTitle("");
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
             barra.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    onBackPressed();
                 }
             });
         } catch (Exception e) {

@@ -37,12 +37,10 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
         try {
             Toolbar barra= findViewById(R.id.barrita);
             setSupportActionBar(barra);
-            barra.setTitle("");
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
             barra.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    onBackPressed();
                 }
             });
         } catch (Exception e) {

@@ -54,6 +54,7 @@ public class Login extends AppCompatActivity implements Response.Listener<JSONOb
     public void onBackPressed() {
         //super.onBackPressed();
         Toast.makeText(getApplicationContext(), "Inicia Sesión"+txtUser.getText().toString()+txtPwd.getText().toString(), Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override

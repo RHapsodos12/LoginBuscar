@@ -41,12 +41,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         try {
             Toolbar barra= findViewById(R.id.barrita);
             setSupportActionBar(barra);
-            barra.setTitle("");
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
             barra.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    onBackPressed();
                 }
             });
         } catch (Exception e) {
