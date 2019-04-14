@@ -3,6 +3,7 @@ package com.example.loginbuscar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,21 @@ public class Modificar extends AppCompatActivity implements Response.Listener<JS
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar);
+
+        try {
+            Toolbar barra= findViewById(R.id.barrita);
+            setSupportActionBar(barra);
+            barra.setTitle("");
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            barra.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         rq = Volley.newRequestQueue(getApplicationContext());
 

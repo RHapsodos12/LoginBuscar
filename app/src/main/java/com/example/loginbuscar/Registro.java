@@ -3,6 +3,7 @@ package com.example.loginbuscar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,21 @@ public class Registro extends AppCompatActivity implements Response.Listener<JSO
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        try {
+            Toolbar barra= findViewById(R.id.barrita);
+            setSupportActionBar(barra);
+            barra.setTitle("");
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            barra.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         mBtnRegistrar =  findViewById(R.id.btnRegistrarReg);
         mTxtUser = findViewById(R.id.txtUserReg);
